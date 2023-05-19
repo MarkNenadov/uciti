@@ -483,11 +483,11 @@ video {
 .cursor-pointer {
   cursor: pointer;
 }
-.flex-row {
-  flex-direction: row;
+.flex-col {
+  flex-direction: column;
 }
-.justify-between {
-  justify-content: space-between;
+.flex-wrap {
+  flex-wrap: wrap;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -516,6 +516,9 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 .pl-7 {
   padding-left: 1.75rem;
@@ -557,4 +560,19 @@ code {
 .hover\:bg-emerald-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(167 243 208 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0px;
+  }
 }

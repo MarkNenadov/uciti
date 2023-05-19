@@ -12,7 +12,7 @@ export function FlashCardView( props: FlashCardProps ) {
     const [showSerbian, setShowSerbian] = useState( startingLanguage === "SR" );
 
     useEffect( () => {
-        setShowSerbian( startingLanguage === "SR" )
+        setShowSerbian( startingLanguage === "SR")
     }, [startingLanguage] );
 
     return (

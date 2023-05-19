@@ -15,8 +15,8 @@ export function FlashCardControlBar( props: FlashCardStackProps ) {
     const languageOptions = [ {value: "SR", label: "Srpski" },  {value: "EN", label: "English" }  ];
   
     return (
-        <div className="flex justify-between pl-7 pr-7 w-full">
-        <div>
+        <div className="flex flex-col md:flex-row md:justify-between pl-7 pr-7 w-full">
+        <div className="pb-5 md:pb-0">
            { 
              cardCount > cardsPerPage && (
                <div 
@@ -28,7 +28,7 @@ export function FlashCardControlBar( props: FlashCardStackProps ) {
              )
            }
          </div>
-         <div>        
+         <div className="pb-5 md:pb-0">
            <label>Starting Language</label>
            <Select 
              value={languageOptions.find( l => l.value === startingLanguage )} 
@@ -38,7 +38,7 @@ export function FlashCardControlBar( props: FlashCardStackProps ) {
              } }
            />
          </div>
-         <div>        
+         <div className="pb-5 md:pb-0">
            <label>Cards Per Page</label>
            <Select 
              value={cardsPerPageOptions.find( c => c.value === cardsPerPage )} 

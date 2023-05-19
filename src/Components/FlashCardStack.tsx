@@ -10,7 +10,7 @@ interface FlashCardStackProps {
 export function FlashCardStack( props: FlashCardStackProps ) {
     const {flashCards, startingLanguage} = props;
     return (
-        <div  className="flex flex-row border-2 rounded-lg w-7/8 m-6 p-6">
+        <div  className="flex flex-wrap border-2 rounded-lg w-7/8 m-6 p-6">
             {
                 flashCards.map( ( flashCard: FlashCard, index: number ) => (
                     <FlashCardView 

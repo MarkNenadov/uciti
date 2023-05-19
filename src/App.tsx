@@ -18,7 +18,7 @@ function App() {
 
   const [cardsPerPage, setCardsPerPage] = useState( 5 );
   const [startingLanguage, setStartingLanguage] = useState( "SR" );
-  const [selectedFlashCards, setSelectedFlashCards] = useState( allFlashCards );
+  const [selectedFlashCards, setSelectedFlashCards] = useState( pickRandomItems( allFlashCards, cardsPerPage ) );
 
   return (
     <div className="border-2 rounded-lg w-7/8 m-6 p-6">
@@ -30,7 +30,6 @@ function App() {
 
       <FlashCardStack 
         flashCards={ selectedFlashCards } 
-        cardsPerPage={ cardsPerPage }
         startingLanguage={ startingLanguage }
       />
 

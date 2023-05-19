@@ -1,6 +1,6 @@
+import React from 'react';
 import { FlashCardView } from './FlashCardView';
 import { FlashCard } from '../Model/FlashCard'
-
 
 interface FlashCardStackProps {
     flashCards: FlashCard[]
@@ -9,6 +9,7 @@ interface FlashCardStackProps {
 
 export function FlashCardStack( props: FlashCardStackProps ) {
     const {flashCards, startingLanguage} = props;
+
     return (
         <div  className="flex flex-wrap border-2 rounded-lg w-7/8 m-6 p-6">
             {
@@ -16,7 +17,7 @@ export function FlashCardStack( props: FlashCardStackProps ) {
                     <FlashCardView 
                         key={index} 
                         flashCard={ flashCard } 
-                        startingLanguage={ startingLanguage }  
+                        startingLanguage={ startingLanguage }
                     />
                 ) )
             }

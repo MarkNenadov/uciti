@@ -8,7 +8,7 @@ interface FlashCardProps {
 }
 
 export function FlashCardView( props: FlashCardProps ) {
-    const {flashCard, startingLanguage} = props;
+    const {flashCard, startingLanguage } = props;
     const [showSerbian, setShowSerbian] = useState( startingLanguage === "SR" );
 
     useEffect( () => {
@@ -18,11 +18,13 @@ export function FlashCardView( props: FlashCardProps ) {
     return (
         <div>
             <div  
-                className="cursor-pointer border-1 rounded-lg w-64 m-6 p-6 bg-emerald-100 hover:bg-emerald-200" 
+                className="flex justify-between cursor-pointer border-1 rounded-lg w-64 m-6 p-6 bg-emerald-100 hover:bg-emerald-200" 
                 onClick={ () => { setShowSerbian( !showSerbian );} }
             >
-                { showSerbian && flashCard.serbianTranslation }
-                { !showSerbian && flashCard.englishTranslation }
+                <div>
+                    { showSerbian && flashCard.serbianTranslation }
+                    { !showSerbian && flashCard.englishTranslation }
+                </div>
             </div>
         </div>
     )

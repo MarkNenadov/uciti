@@ -4,6 +4,7 @@ import { FlashCard } from './Model/FlashCard'
 import React, { useEffect, useMemo, useState } from 'react';
 import { pickRandomItems } from './Utils/RandomUtils';
 import { getAllFlashCards } from "./FlashCardData";
+import { NoteBanner } from "./Components/NoteBanner"
 
 function App() {
   const allFlashCards: FlashCard[] = useMemo( () => getAllFlashCards(), [] );
@@ -24,6 +25,8 @@ function App() {
         </p>
       </header>
 
+      <NoteBanner text={ "Click cards to switch lanaguage" } /> 
+
       <FlashCardStack 
         flashCards={ selectedFlashCards } 
         startingLanguage={ startingLanguage }
@@ -35,7 +38,9 @@ function App() {
         setCardsPerPage={ setCardsPerPage } 
         cardsPerPage={ cardsPerPage } 
         cardCount={ allFlashCards.length }
-        shuffleCards={ () => { setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) ) } }
+        shuffleCards={ () => { 
+          setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
+        } }
       />
     </div>
   );

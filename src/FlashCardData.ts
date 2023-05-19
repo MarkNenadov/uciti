@@ -1,4 +1,7 @@
-export const getAllFlashCards = () => {
+import { FlashCard } from './Model/FlashCard'
+
+
+export const getAllFlashCards = () : FlashCard[]  => {
     return [ 
         {serbianTranslation: "hvala", englishTranslation: "thank you"},
         {serbianTranslation: "mačka", englishTranslation: "cat"},

@@ -1,4 +1,3 @@
-//@ts-ignore
 import React, { useState, useEffect } from 'react';
 import { FlashCard } from '../Model/FlashCard'
 
@@ -7,8 +6,7 @@ interface FlashCardProps {
     startingLanguage: string
 }
 
-export function FlashCardView( props: FlashCardProps ) {
-    const {flashCard, startingLanguage } = props;
+export function FlashCardView( {flashCard, startingLanguage}: FlashCardProps ) {
     const [showSerbian, setShowSerbian] = useState( startingLanguage === "SR" );
 
     useEffect( () => {

@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^20.1.0",
-    "@types/react": "^18.2.6",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
     "@types/websocket": "^1.0.5",
     "react": "^18.2.0",
@@ -43,7 +43,7 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.8",
+    "autoprefixer": "^10.4.14",
     "postcss-cli": "^10.1.0",
     "tailwindcss": "^3.3.2"
   }

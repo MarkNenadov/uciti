@@ -487,9 +487,6 @@ video {
 .w-4 {
   width: 1rem;
 }
-.w-64 {
-  width: 16rem;
-}
 .w-full {
   width: 100%;
 }
@@ -530,6 +527,10 @@ video {
 .bg-emerald-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 250 229 / var(--tw-bg-opacity));
+}
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 .fill-current {
   fill: currentColor;
@@ -625,6 +626,10 @@ code {
 }
 
 @media (min-width: 768px) {
+
+  .md\:w-64 {
+    width: 16rem;
+  }
 
   .md\:flex-row {
     flex-direction: row;

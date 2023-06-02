@@ -580,6 +580,10 @@ video {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -634,10 +638,6 @@ code {
 
 @media (min-width: 768px) {
 
-  .md\:w-64 {
-    width: 16rem;
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
@@ -657,6 +657,10 @@ code {
     display: inline-flex;
   }
 
+  .lg\:w-64 {
+    width: 16rem;
+  }
+
   .lg\:rounded-full {
     border-radius: 9999px;
   }
@@ -664,5 +668,9 @@ code {
   .lg\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .lg\:text-left {
+    text-align: left;
   }
 }

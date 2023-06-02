@@ -42,6 +42,11 @@ function App() {
           setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
         } }
       />
+
+  <NoteBanner isFullWidth={true}> 
+    <span>This is an open source project, the React source is on <a className="text-blue-500 underline" href="https://github.com/MarkNenadov/uciti">GitHub</a>.</span>
+  </NoteBanner>
+
     </div>
   );
 }

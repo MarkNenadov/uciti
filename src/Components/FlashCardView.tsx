@@ -15,7 +15,7 @@ export function FlashCardView( {flashCard, startingLanguage}: FlashCardProps ) {
 
     return (
             <div  
-                className="flex justify-between cursor-pointer border-1 rounded-lg w-full md:w-64 m-6 p-6 bg-emerald-100 hover:bg-emerald-200" 
+                className="flex justify-between cursor-pointer border-1 rounded-lg w-full lg:w-64 m-6 p-6 bg-emerald-100 hover:bg-emerald-200" 
                 onClick={ () => { setShowSerbian( !showSerbian );} }
             >
                 <div>

@@ -1,5 +1,5 @@
 //@ts-ignore
-import React  , { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 interface NoteBannerProps {
     text?: string,

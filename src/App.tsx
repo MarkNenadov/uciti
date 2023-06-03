@@ -1,6 +1,6 @@
 import { FlashCardStack } from './Components/FlashCardStack';
 import { FlashCardControlBar } from './Components/FlashCardControlBar';
-import { FlashCard } from './Model/FlashCard'
+import { FlashCard, hasDuplicates } from './Model/FlashCard'
 import React, { useEffect, useMemo, useState } from 'react';
 import { pickRandomItems } from './Utils/RandomUtils';
 import { getAllFlashCards } from "./FlashCardData";
@@ -14,6 +14,9 @@ function App() {
   const [selectedFlashCards, setSelectedFlashCards] = useState( pickRandomItems( allFlashCards, cardsPerPage ) );
 
   useEffect( () => {
+    if ( hasDuplicates( allFlashCards ) ) {
+      alert( "Warning duplicate flashcard detected" );
+    }
     setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
   }, [cardsPerPage, allFlashCards]);
 

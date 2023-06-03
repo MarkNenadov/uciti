@@ -21,7 +21,7 @@ export function FlashCardControlBar( {startingLanguage, setStartingLanguage, set
              cardCount > cardsPerPage && (
                <div 
                     aria-label={"Shuffle Cards"}
-                     onClick={ () => { shuffleCards( cardsPerPage ) } } 
+                    onClick={ () => { shuffleCards( cardsPerPage ) } } 
                     className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center lg:text-left w-full"
                 >
                     Shuffle Cards

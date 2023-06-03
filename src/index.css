@@ -478,6 +478,9 @@ video {
 .mr-3 {
   margin-right: 0.75rem;
 }
+.inline-block {
+  display: inline-block;
+}
 .flex {
   display: flex;
 }

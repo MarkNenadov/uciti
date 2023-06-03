@@ -28,14 +28,22 @@ export const getAllFlashCards = () : FlashCard[]  => {
         {serbianTranslation: "polako", englishTranslation: "slow down"},
         {serbianTranslation: "razumeti", englishTranslation: "understand"},
         {serbianTranslation: "ručak", englishTranslation: "lunch"},
+        {serbianTranslation: "noč", englishTranslation: "night"},
+        {serbianTranslation: "sendvič", englishTranslation: "sandwich"},
+        {serbianTranslation: "led", englishTranslation: "ice"},
+        {serbianTranslation: "kuča", englishTranslation: "home"},
         {serbianTranslation: "levo", englishTranslation: "left"},
-        {serbianTranslation: "zemulju", englishTranslation: "world/earth"},
+        {serbianTranslation: "zemlja", englishTranslation: "earth"},
         {serbianTranslation: "desno", englishTranslation: "right"},
         {serbianTranslation: "lopta", englishTranslation: "ball"},
-        {serbianTranslation: "desno", englishTranslation: "right"},
         {serbianTranslation: "početku", englishTranslation: "beginning"},
         {serbianTranslation: "čarapa", englishTranslation: "sock"},
         {serbianTranslation: "piće", englishTranslation: "drink"},
-        {serbianTranslation: "teško", englishTranslation: "hard"}
+        {serbianTranslation: "teško", englishTranslation: "hard"},
+        {serbianTranslation: "kukuruz", englishTranslation: "corn"},
+        {serbianTranslation: "hrane", englishTranslation: "food"},
+        {serbianTranslation: "milost", englishTranslation: "grace"},
+        {serbianTranslation: "slatko", englishTranslation: "sweet"},
+        {serbianTranslation: "kiselo", englishTranslation: "sour"}
       ];
 }

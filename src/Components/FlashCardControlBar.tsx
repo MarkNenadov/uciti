@@ -1,6 +1,5 @@
 import React from 'react';
 import Select from 'react-select';
-import OptionsType from 'react-select';
 
 interface FlashCardStackProps {
     setCurrentLanguage: ( value: string ) => void;

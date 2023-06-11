@@ -10,7 +10,7 @@ export const getAllFlashCards = ( language: string ) : FlashCard[] => {
   return [];
 }
 
-export const getAllSerbianFlashCards = () : FlashCard[] => {
+const getAllSerbianFlashCards = () : FlashCard[] => {
     return [ 
         {translation: "hvala", english: "thank you"},
         {translation: "mačka", english: "cat"},
@@ -63,8 +63,20 @@ export const getAllSerbianFlashCards = () : FlashCard[] => {
       ];
 }
 
-export const getAllGermanFlashCards = () : FlashCard[] => {
-  return [ 
+const getAllGermanFlashCards = () : FlashCard[] => {
+    return [ 
+      {translation: "tanzen", english: "dance"},
+      {translation: "leute", english: "people"},
+      {translation: "year", english: "jahr"},
+      {translation: "tür", english: "door"},
+      {translation: "ruhig", english: "quiet"},
+      {translation: "mutter", english: "mother"},
+      {translation: "achtzehn", english: "eighteen"},
+      {translation: "schmecken", english: "taste"},
+      {translation: "kalt", english: "cold"},
+      {translation: "schlüssel", english: "key"},
+      {translation: "flughafen", english: "airport"},
+      {translation: "noch", english: "still"},
       {translation: "danke", english: "thank you"},
       {translation: "katze", english: "cat"},
       {translation: "gedanke", english: "thought"},

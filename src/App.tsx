@@ -11,9 +11,7 @@ function App() {
 
   const [cardsPerPage, setCardsPerPage] = useState( 5 );
   const [hideEnglish, setHideEnglish] = useState( true );
-
   const allFlashCards: FlashCard[] = useMemo( () => getAllFlashCards( currentLanguage ), [currentLanguage] );
-
   const [selectedFlashCards, setSelectedFlashCards] = useState( pickRandomItems( allFlashCards, cardsPerPage ) );
 
   useEffect( () => {
@@ -25,36 +23,35 @@ function App() {
 
   return (
     <div className="border-2 rounded-lg w-7/8 m-6 p-6">
-      <header className="App-heade">
-        <p className="text-3xl">
-          učiti - (transitive) to teach, instruct, educate
-        </p>
-      </header>
+        <header className="App-heade">
+          <p className="text-3xl">
+            učiti - (transitive) to teach, instruct, educate
+          </p>
+        </header>
 
-      <NoteBanner text={ "Click cards to switch lanaguage" } /> 
+        <NoteBanner text={ "Click cards to switch lanaguage" } /> 
 
-      <FlashCardStack 
-        flashCards={ selectedFlashCards } 
-        hideEnglish={ hideEnglish }
-      />
+        <FlashCardStack 
+          flashCards={ selectedFlashCards } 
+          hideEnglish={ hideEnglish }
+        />
 
-      <FlashCardControlBar 
-        setCurrentLanguage={ setCurrentLanguage} 
-        currentLanguage={ currentLanguage }
-        setHideEnglish={ setHideEnglish} 
-        hideEnglish={ hideEnglish }
-        setCardsPerPage={ setCardsPerPage } 
-        cardsPerPage={ cardsPerPage } 
-        cardCount={ allFlashCards.length }
-        shuffleCards={ () => { 
-          setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
-        } }
-      />
+        <FlashCardControlBar 
+          setCurrentLanguage={ setCurrentLanguage} 
+          currentLanguage={ currentLanguage }
+          setHideEnglish={ setHideEnglish} 
+          hideEnglish={ hideEnglish }
+          setCardsPerPage={ setCardsPerPage } 
+          cardsPerPage={ cardsPerPage } 
+          cardCount={ allFlashCards.length }
+          shuffleCards={ () => { 
+            setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
+          } }
+        />
 
-  <NoteBanner isFullWidth={true}> 
-    <span>This is an open source project, the React source is on <a className="text-blue-500 underline" href="https://github.com/MarkNenadov/uciti">GitHub</a>.</span>
-  </NoteBanner>
-
+      <NoteBanner isFullWidth={true}> 
+        <span>This is an open source project, the React source is on <a className="text-blue-500 underline" href="https://github.com/MarkNenadov/uciti">GitHub</a>.</span>
+      </NoteBanner>
     </div>
   );
 }

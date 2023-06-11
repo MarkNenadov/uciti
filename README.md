@@ -1,6 +1,6 @@
 # uciti
 
-A React Serbian-English flash card app.
+A React Serbian-English and German-English flash card app.
 
 http://serbian.marknenadov.com/
 

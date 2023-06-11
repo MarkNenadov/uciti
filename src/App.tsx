@@ -7,10 +7,13 @@ import { getAllFlashCards } from "./FlashCardData";
 import { NoteBanner } from "./Components/NoteBanner"
 
 function App() {
-  const allFlashCards: FlashCard[] = useMemo( () => getAllFlashCards(), [] );
+  const [currentLanguage, setCurrentLanguage] = useState( "SR" );
 
   const [cardsPerPage, setCardsPerPage] = useState( 5 );
-  const [startingLanguage, setStartingLanguage] = useState( "SR" );
+  const [hideEnglish, setHideEnglish] = useState( true );
+
+  const allFlashCards: FlashCard[] = useMemo( () => getAllFlashCards( currentLanguage ), [currentLanguage] );
+
   const [selectedFlashCards, setSelectedFlashCards] = useState( pickRandomItems( allFlashCards, cardsPerPage ) );
 
   useEffect( () => {
@@ -32,12 +35,14 @@ function App() {
 
       <FlashCardStack 
         flashCards={ selectedFlashCards } 
-        startingLanguage={ startingLanguage }
+        hideEnglish={ hideEnglish }
       />
 
       <FlashCardControlBar 
-        setStartingLanguage={ setStartingLanguage} 
-        startingLanguage={ startingLanguage }
+        setCurrentLanguage={ setCurrentLanguage} 
+        currentLanguage={ currentLanguage }
+        setHideEnglish={ setHideEnglish} 
+        hideEnglish={ hideEnglish }
         setCardsPerPage={ setCardsPerPage } 
         cardsPerPage={ cardsPerPage } 
         cardCount={ allFlashCards.length }

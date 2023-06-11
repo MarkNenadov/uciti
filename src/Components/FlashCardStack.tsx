@@ -5,10 +5,10 @@ import { NoteBanner } from './NoteBanner';
 
 interface FlashCardStackProps {
     flashCards: FlashCard[]
-    startingLanguage: string;
+    hideEnglish: boolean;
 }
 
-export function FlashCardStack( {flashCards, startingLanguage}: FlashCardStackProps ) {
+export function FlashCardStack( {flashCards, hideEnglish}: FlashCardStackProps ) {
     if ( hasDuplicates( flashCards ) ) {
         return ( 
             <NoteBanner isFullWidth={true}> 
@@ -22,9 +22,9 @@ export function FlashCardStack( {flashCards, startingLanguage}: FlashCardStackPr
             {
                 flashCards.map( ( flashCard: FlashCard ) => (
                     <FlashCardView 
-                        key={'viewFor' + flashCard.englishTranslation} 
+                        key={'viewFor' + flashCard.english} 
                         flashCard={ flashCard } 
-                        startingLanguage={ startingLanguage }
+                        hideEnglish={ hideEnglish }
                     />
                 ) )
             }

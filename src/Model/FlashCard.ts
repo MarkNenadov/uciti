@@ -1,10 +1,10 @@
 export interface FlashCard {
-    serbianTranslation: string,
-    englishTranslation: string,
+    translation: string,
+    english: string,
 }
 
 export function hasDuplicates(flashCards: FlashCard[]): boolean {
-    const englishTranslations = flashCards.map(flashcard => flashcard.englishTranslation );
+    const englishTranslations = flashCards.map(flashcard => flashcard.english );
 
     return englishTranslations.some((translation, index) => englishTranslations.indexOf(translation) !== index);
 }

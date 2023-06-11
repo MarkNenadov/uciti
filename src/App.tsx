@@ -1,26 +1,11 @@
 import { FlashCardStack } from './Components/FlashCardStack';
 import { FlashCardControlBar } from './Components/FlashCardControlBar';
-import { FlashCard, hasDuplicates } from './Model/FlashCard'
-import React, { useEffect, useMemo, useState } from 'react';
-import { pickRandomItems } from './Utils/RandomUtils';
-import { getAllFlashCards } from "./FlashCardData";
+import React from 'react';
 import { NoteBanner } from "./Components/NoteBanner"
+import { FlashCardProvider } from './Context/FlashCardContext';
+import { ConfigurationProvider } from './Context/ConfigurationContext';
 
 function App() {
-  const [currentLanguage, setCurrentLanguage] = useState( "SR" );
-
-  const [cardsPerPage, setCardsPerPage] = useState( 5 );
-  const [hideEnglish, setHideEnglish] = useState( true );
-  const allFlashCards: FlashCard[] = useMemo( () => getAllFlashCards( currentLanguage ), [currentLanguage] );
-  const [selectedFlashCards, setSelectedFlashCards] = useState( pickRandomItems( allFlashCards, cardsPerPage ) );
-
-  useEffect( () => {
-    if ( hasDuplicates( allFlashCards ) ) {
-      alert( "Warning duplicate flashcard detected" );
-    }
-    setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
-  }, [cardsPerPage, allFlashCards]);
-
   return (
     <div className="border-2 rounded-lg w-7/8 m-6 p-6">
         <header className="App-heade">
@@ -31,23 +16,12 @@ function App() {
 
         <NoteBanner text={ "Click cards to switch lanaguage" } /> 
 
-        <FlashCardStack 
-          flashCards={ selectedFlashCards } 
-          hideEnglish={ hideEnglish }
-        />
-
-        <FlashCardControlBar 
-          setCurrentLanguage={ setCurrentLanguage} 
-          currentLanguage={ currentLanguage }
-          setHideEnglish={ setHideEnglish} 
-          hideEnglish={ hideEnglish }
-          setCardsPerPage={ setCardsPerPage } 
-          cardsPerPage={ cardsPerPage } 
-          cardCount={ allFlashCards.length }
-          shuffleCards={ () => { 
-            setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
-          } }
-        />
+        <ConfigurationProvider>
+          <FlashCardProvider>
+            <FlashCardStack />
+            <FlashCardControlBar />
+          </FlashCardProvider>
+        </ConfigurationProvider>
 
       <NoteBanner isFullWidth={true}> 
         <span>This is an open source project, the React source is on <a className="text-blue-500 underline" href="https://github.com/MarkNenadov/uciti">GitHub</a>.</span>

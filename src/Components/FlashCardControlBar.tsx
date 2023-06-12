@@ -12,8 +12,8 @@ export function FlashCardControlBar() {
     const { currentLanguage, setCurrentLanguage, cardsPerPage, setCardsPerPage, hideEnglish, setHideEnglish } = useConfigurationContext();
 
     return (
-        <div className="flex flex-col md:flex-row md:justify-between pl-7 pr-7 w-full">
-        <div className="pb-5 md:pb-0">
+        <div className="flex flex-col lg:flex-row md:justify-between pl-7 pr-7 w-full">
+        <div className="pb-5 lg:pb-0">
            {   
              allFlashCards.length > cardsPerPage && (
                <div 

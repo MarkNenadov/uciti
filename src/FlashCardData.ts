@@ -59,13 +59,24 @@ const getAllSerbianFlashCards = () : FlashCard[] => {
         {translation: "hrane", english: "food"},
         {translation: "milost", english: "grace"},
         {translation: "slatko", english: "sweet"},
-        {translation: "kiselo", english: "sour"}
+        {translation: "kiselo", english: "sour"},
+        {translation: "prst", english: "finger"},
+        {translation: "glas", english: "voice"},
+        {translation: "ruku", english: "hand"},
+        {translation: "carpet", english: "tepih"},
+        {translation: "kiša", english: "rain"},
+        {translation: "oblak", english: "cloud"},
+        {translation: "poljubac", english: "kiss"},
+        {translation: "kosa", english: "hair"}
       ];
 }
 
 const getAllGermanFlashCards = () : FlashCard[] => {
     return [ 
       {translation: "tanzen", english: "dance"},
+      {translation: "kuss", english: "kiss"},
+      {translation: "krank", english: "sick"},
+      {translation: "laut", english: "loud"},
       {translation: "leute", english: "people"},
       {translation: "year", english: "jahr"},
       {translation: "tür", english: "door"},
@@ -119,6 +130,11 @@ const getAllGermanFlashCards = () : FlashCard[] => {
       {translation: "essen", english: "food"},
       {translation: "anmut", english: "grace"},
       {translation: "süss", english: "sweet"},
-      {translation: "sauer", english: "sour"}
+      {translation: "sauer", english: "sour"},
+      {translation: "zähne", english: "teeth"},
+      {translation: "vogel", english: "bird"},
+      {translation: "teppich", english: "carpe"},
+      {translation: "stimme", english: "voice"},
+      {translation: "haar", english: "hair"}
     ];
 }

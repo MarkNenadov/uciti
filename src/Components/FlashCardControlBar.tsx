@@ -4,12 +4,12 @@ import { useFlashCardContext } from '../Context/FlashCardContext';
 import { useConfigurationContext } from '../Context/ConfigurationContext';
 
 export function FlashCardControlBar() {
-    const cardsPerPageOptions = [ {value: 1, label: "1" },  {value: 3, label: "3" },  {value: 5, label: "5" },  {value: 10, label: "10" }  ];
+    const cardsPerPageOptions = [ {value: 4, label: "4" },  {value: 8, label: "8" },  {value: 10, label: "10" },  {value: 12, label: "12" }  ];
     const languageOptions = [ {value: "SR", label: "Srpski" },  {value: "DE", label: "Deutsch" } ];
-    const hideEnglishOptions = [ {value: "true", label: "Yes" },  {value: "false", label: "No" } ];
+    const yesNoOptions = [ {value: "true", label: "Yes" },  {value: "false", label: "No" } ];
 
     const { allFlashCards, shuffleCards } = useFlashCardContext();
-    const { currentLanguage, setCurrentLanguage, cardsPerPage, setCardsPerPage, hideEnglish, setHideEnglish } = useConfigurationContext();
+    const { currentLanguage, setCurrentLanguage, cardsPerPage, setCardsPerPage, hideEnglish, setHideEnglish, playMatchingGame, setPlayMatchingGame } = useConfigurationContext();
 
     return (
         <div className="flex flex-col lg:flex-row md:justify-between pl-7 pr-7 w-full">
@@ -26,6 +26,19 @@ export function FlashCardControlBar() {
              )
            }
          </div>
+         <div className="pb-5 md:pb-0">
+           <label htmlFor={"playMatchingGame"}>Play Matching Game?</label>
+           <Select 
+                id={"playMatchingGame"}
+                aria-label={"Hide English?"}
+                 value={ yesNoOptions.find( e => e.value === "" + playMatchingGame ) } 
+                 options={ yesNoOptions } 
+                 onChange={ ( option ) => {
+                    setPlayMatchingGame( option.value === "true" )
+                } }
+           />
+         </div>
+
          <div className="pb-5 md:pb-0">
            <label htmlFor={"currentLangauge"}>Practice Language</label>
            <Select 
@@ -44,8 +57,8 @@ export function FlashCardControlBar() {
            <Select 
                 id={"hideEnglish"}
                 aria-label={"Hide English?"}
-                 value={ hideEnglishOptions.find( e => e.value === "" + hideEnglish ) } 
-                 options={ hideEnglishOptions } 
+                 value={ yesNoOptions.find( e => e.value === "" + hideEnglish ) } 
+                 options={ yesNoOptions } 
                  onChange={ ( option ) => {
                     setHideEnglish( option.value === "true" )
                 } }

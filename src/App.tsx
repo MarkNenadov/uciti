@@ -1,6 +1,7 @@
 import { FlashCardStack } from './Components/FlashCardStack';
 import { FlashCardControlBar } from './Components/FlashCardControlBar';
 import React from 'react';
+import { Notes } from "./Components/Notes"
 import { NoteBanner } from "./Components/NoteBanner"
 import { FlashCardProvider } from './Context/FlashCardContext';
 import { ConfigurationProvider } from './Context/ConfigurationContext';
@@ -14,9 +15,8 @@ function App() {
           </p>
         </header>
 
-        <NoteBanner text={ "Click cards to switch lanaguage" } /> 
-
         <ConfigurationProvider>
+          <Notes />
           <FlashCardProvider>
             <FlashCardStack />
             <FlashCardControlBar />

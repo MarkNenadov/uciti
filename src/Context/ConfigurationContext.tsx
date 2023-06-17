@@ -5,16 +5,19 @@ interface ConfigurationContextType {
   currentLanguage: string,
   cardsPerPage: number,
   hideEnglish: boolean,
+  playMatchingGame: boolean,
   setCardsPerPage: any,
   setCurrentLanguage: any,
-  setHideEnglish: any
+  setHideEnglish: any,
+  setPlayMatchingGame: any
 }
 
 const ConfigurationContext = createContext<ConfigurationContextType | undefined>(undefined);
 
 export const ConfigurationProvider = ({ children }) => {
+    const [playMatchingGame, setPlayMatchingGame] = useState( false );
     const [hideEnglish, setHideEnglish] = useState( true );
-    const [cardsPerPage, setCardsPerPage] = useState( 5 );
+    const [cardsPerPage, setCardsPerPage] = useState( 4 );
     const [currentLanguage, setCurrentLanguage] = useState( "SR" );
       
     const contextValue = {
@@ -23,7 +26,9 @@ export const ConfigurationProvider = ({ children }) => {
         currentLanguage,
         setCurrentLanguage,
         hideEnglish,
-        setHideEnglish
+        setHideEnglish,
+        setPlayMatchingGame,
+        playMatchingGame
       };
 
     return (

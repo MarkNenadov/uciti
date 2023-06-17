@@ -76,6 +76,7 @@ const getAllGermanFlashCards = () : FlashCard[] => {
       {translation: "tanzen", english: "dance"},
       {translation: "kuss", english: "kiss"},
       {translation: "krank", english: "sick"},
+      {translation: "geschichte", english: "story"},
       {translation: "laut", english: "loud"},
       {translation: "leute", english: "people"},
       {translation: "year", english: "jahr"},

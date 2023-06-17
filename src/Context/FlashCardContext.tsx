@@ -1,5 +1,5 @@
-import React, { createContext, useState, useMemo, useEffect, useContext } from 'react';
-import { pickRandomItems } from './../Utils/RandomUtils';
+import React, { createContext, useState, useMemo, useEffect, useContext, useCallback } from 'react';
+import { pickRandomItems, shuffleArray } from './../Utils/RandomUtils';
 import { getAllFlashCards } from "./../FlashCardData";
 import { FlashCard, hasDuplicates } from './../Model/FlashCard'
 import { useConfigurationContext } from './ConfigurationContext';
@@ -7,7 +7,10 @@ import { useConfigurationContext } from './ConfigurationContext';
 interface FlashCardContextType {
     allFlashCards: FlashCard[];
     selectedFlashCards: FlashCard[];
+    setSelectedFlashCards: any;
     shuffleCards: () => void;
+    leftMatchStack: FlashCard[];
+    rightMatchStack: FlashCard[];
 }
 
 const FlashCardContext = createContext<FlashCardContextType | undefined>(undefined);
@@ -18,9 +21,12 @@ export const FlashCardProvider = ({ children }) => {
     const allFlashCards: FlashCard[] = useMemo( () => getAllFlashCards( currentLanguage ), [currentLanguage] );
     const [selectedFlashCards, setSelectedFlashCards] = useState( pickRandomItems( allFlashCards, cardsPerPage ) );
 
-    const shuffleCards = () => { 
+    const [leftMatchStack, setLeftMatchStack] = useState<FlashCard[]>( shuffleArray( selectedFlashCards ));
+    const [rightMatchStack, setRightMatchStack] = useState<FlashCard[]>( shuffleArray( selectedFlashCards ));
+
+    const shuffleCards = useCallback(() => { 
         setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
-      };
+      }, [allFlashCards, cardsPerPage]);
   
     useEffect( () => {
         if ( hasDuplicates( allFlashCards ) ) {
@@ -30,10 +36,24 @@ export const FlashCardProvider = ({ children }) => {
       }, [cardsPerPage, allFlashCards]);
 
       
+    useEffect( () => {
+        if ( selectedFlashCards.length === 0 ) {
+            shuffleCards();
+        }
+    }, [ selectedFlashCards, shuffleCards ] );
+
+    useEffect( () => {
+        setLeftMatchStack( shuffleArray( selectedFlashCards ) );
+        setRightMatchStack( shuffleArray( selectedFlashCards ) );
+    }, [ selectedFlashCards ] );
+
     const contextValue = {
         allFlashCards,
         selectedFlashCards,
-        shuffleCards
+        setSelectedFlashCards,
+        shuffleCards,
+        leftMatchStack,
+        rightMatchStack
     };
 
     return <FlashCardContext.Provider value={contextValue}>

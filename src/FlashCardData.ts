@@ -73,9 +73,10 @@ const getAllSerbianFlashCards = () : FlashCard[] => {
 
 const getAllGermanFlashCards = () : FlashCard[] => {
     return [ 
+      {translation: "sehr", english: "very"},
       {translation: "unsere", english: "our"},
       {translation: "nachbar", english: "neighbour"},
-      {translation: "nachbar", english: "neighbour"},
+      {translation: "nett", english: "nice"},
       {translation: "aber", english: "but"},
       {translation: "wohnt", english: "lives"},
       {translation: "leise", english: "quiet"},

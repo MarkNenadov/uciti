@@ -2,7 +2,11 @@
 
 A React Serbian-English and German-English flash card app.
 
-http://serbian.marknenadov.com/
+http://uciti.marknenadov.com or http://serbian.marknenadov.com/
+
+# Tech
+* React (just Create React App)
+* Vercel deployment
 
 ## Todo
 

@@ -11,8 +11,22 @@ export function FlashCardStack() {
     const { selectedFlashCards, setSelectedFlashCards  } = useFlashCardContext();
     const { hideEnglish, playMatchingGame } = useConfigurationContext();
 
-    const [currentChoice, setCurrenChoice] = useState(undefined);
+    const [currentChoice, setCurrenChoice] = useState("");
     const [currentSide, setCurrentSide] = useState("");
+
+    const matchCardHandler = ( flashCard: FlashCard, side: string ) => {
+        if ( !currentChoice ) { 
+            setCurrenChoice( flashCard.english ); 
+            setCurrentSide( side );
+        } else {
+            if ( ( flashCard.english === currentChoice ) && ( side !== currentSide ) ) {
+                const updatedFlashCards = selectedFlashCards.filter( card => card.english !== flashCard.english )
+                
+                setSelectedFlashCards( updatedFlashCards );
+            }
+            setCurrenChoice( undefined );
+        } 
+    }
 
     if ( hasDuplicates( selectedFlashCards ) ) {
         return ( 
@@ -20,20 +34,6 @@ export function FlashCardStack() {
                 <span>Warning: Duplicate flash card present. Not rendering stack.</span>
             </NoteBanner>
         )
-    }
-
-    const matchCardHandler = ( flashCard: FlashCard, side: string ) => {
-        if ( !currentChoice ) { 
-            setCurrenChoice( flashCard ); 
-            setCurrentSide( side );
-        } else {
-            if ( flashCard.english === currentChoice.english && side !== currentSide ) {
-                const updatedFlashCards = selectedFlashCards.filter( card => card.english !== flashCard.english )
-                
-                setSelectedFlashCards( updatedFlashCards );
-            }
-            setCurrenChoice( undefined );
-        } 
     }
     
     return (

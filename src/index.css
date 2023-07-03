@@ -478,12 +478,6 @@ video {
 .mr-3 {
   margin-right: 0.75rem;
 }
-.mt-5 {
-  margin-top: 1.25rem;
-}
-.mt-6 {
-  margin-top: 1.5rem;
-}
 .flex {
   display: flex;
 }
@@ -523,11 +517,6 @@ video {
 .justify-between {
   justify-content: space-between;
 }
-.space-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
 .rounded {
   border-radius: 0.25rem;
 }
@@ -561,9 +550,6 @@ video {
 .p-6 {
   padding: 1.5rem;
 }
-.p-0 {
-  padding: 0px;
-}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -587,26 +573,20 @@ video {
 .pb-5 {
   padding-bottom: 1.25rem;
 }
-.pl-7 {
-  padding-left: 1.75rem;
-}
-.pr-7 {
-  padding-right: 1.75rem;
-}
-.pt-3 {
-  padding-top: 0.75rem;
-}
-.pt-4 {
-  padding-top: 1rem;
-}
 .pl-6 {
   padding-left: 1.5rem;
+}
+.pl-7 {
+  padding-left: 1.75rem;
 }
 .pr-6 {
   padding-right: 1.5rem;
 }
-.pt-5 {
-  padding-top: 1.25rem;
+.pr-7 {
+  padding-right: 1.75rem;
+}
+.pt-4 {
+  padding-top: 1rem;
 }
 .text-left {
   text-align: left;

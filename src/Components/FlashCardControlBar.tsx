@@ -19,7 +19,7 @@ export function FlashCardControlBar() {
                <div 
                     aria-label={"Shuffle Cards"}
                     onClick={ () => { shuffleCards() } } 
-                    className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center lg:text-left w-full"
+                    className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center lg:text-left w-full lg:mt-6"
                 >
                     Shuffle Cards
             </div>

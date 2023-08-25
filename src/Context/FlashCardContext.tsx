@@ -7,7 +7,7 @@ import { useConfigurationContext } from './ConfigurationContext';
 interface FlashCardContextType {
     allFlashCards: FlashCard[];
     selectedFlashCards: FlashCard[];
-    setSelectedFlashCards: any;
+    setSelectedFlashCards: React.Dispatch<React.SetStateAction<FlashCard[]>>;
     shuffleCards: () => void;
     leftMatchStack: FlashCard[];
     rightMatchStack: FlashCard[];

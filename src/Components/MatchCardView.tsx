@@ -5,7 +5,7 @@ import { FlashCard } from '../Model/FlashCard'
 interface MatchCardProps {
     flashCard: FlashCard
     language: string 
-    callback: any
+    callback: () => void
 }
 
 export function MatchCardView( {flashCard, language, callback}: MatchCardProps ) {
@@ -20,5 +20,4 @@ export function MatchCardView( {flashCard, language, callback}: MatchCardProps )
           </div>
         </div>
       )
-      
 }

@@ -6,10 +6,10 @@ interface ConfigurationContextType {
   cardsPerPage: number,
   hideEnglish: boolean,
   playMatchingGame: boolean,
-  setCardsPerPage: any,
-  setCurrentLanguage: any,
-  setHideEnglish: any,
-  setPlayMatchingGame: any
+  setCardsPerPage: React.Dispatch<React.SetStateAction<number>>;
+  setCurrentLanguage: React.Dispatch<React.SetStateAction<string>>;
+  setHideEnglish: React.Dispatch<React.SetStateAction<boolean>>;
+  setPlayMatchingGame: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ConfigurationContext = createContext<ConfigurationContextType | undefined>(undefined);

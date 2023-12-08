@@ -4,7 +4,7 @@ A React Serbian-English and German-English flash card app.
 
 http://uciti.marknenadov.com or http://serbian.marknenadov.com/
 
-# Tech
+## Tech
 
 React, Typescript, TailwindCSS, vscode, Vercel
 

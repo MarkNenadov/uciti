@@ -1,6 +1,6 @@
 import React, { createContext, useState, useMemo, useEffect, useContext, useCallback } from 'react';
 import { pickRandomItems, shuffleArray } from './../Utils/RandomUtils';
-import { getAllFlashCards } from "./../FlashCardData";
+import { getAllFlashCards } from "../Data/FlashCardData";
 import { FlashCard, hasDuplicates } from './../Model/FlashCard'
 import { useConfigurationContext } from './ConfigurationContext';
 

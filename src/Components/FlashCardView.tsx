@@ -17,7 +17,7 @@ export function FlashCardView( {flashCard, hideEnglish, preventFlip}: FlashCardP
 
     return (
         <div  
-          className="text-4xl flex justify-between ${preventFlip ? '' : 'cursor-pointer'} border-1 rounded-lg m-6 p-6 bg-emerald-100 hover:bg-emerald-200 w-full lg:w-1/4" 
+          className="text-4xl flex justify-between ${preventFlip ? '' : 'cursor-pointer'} border-1 rounded-lg m-6 p-6 bg-emerald-100 dark:bg-black dark:border dark:border-1 dark:border-white hover:bg-emerald-200 dark:hover:bg-gray-800 dark:text-white w-full lg:w-1/4" 
           onClick={() => { if ( !preventFlip ) { setShowEnglish(!showEnglish); }}}
         >
           <div className="overflow-wrap break-word ">

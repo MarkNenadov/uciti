@@ -1,4 +1,4 @@
-import { FlashCard } from './Model/FlashCard'
+import { FlashCard } from '../Model/FlashCard'
 
 export const getAllFlashCards = ( language: string ) : FlashCard[] => {
   if ( language === "SR" ) {
@@ -79,7 +79,6 @@ const getAllGermanFlashCards = () : FlashCard[] => {
       {translation: "nett", english: "nice"},
       {translation: "aber", english: "but"},
       {translation: "wohnt", english: "lives"},
-      {translation: "leise", english: "quiet"},
       {translation: "studiert", english: "studying"},
       {translation: "tanzen", english: "dance"},
       {translation: "kuss", english: "kiss"},

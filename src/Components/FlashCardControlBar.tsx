@@ -10,7 +10,7 @@ export function FlashCardControlBar() {
 
     const { allFlashCards, shuffleCards } = useFlashCardContext();
     const { currentLanguage, setCurrentLanguage, cardsPerPage, setCardsPerPage, hideEnglish, setHideEnglish, playMatchingGame, setPlayMatchingGame } = useConfigurationContext();
-
+    
     return (
         <div className="flex flex-col lg:flex-row md:justify-between pl-7 pr-7 w-full">
         <div className="pb-5 lg:pb-0">
@@ -19,7 +19,7 @@ export function FlashCardControlBar() {
                <div 
                     aria-label={"Shuffle Cards"}
                     onClick={ () => { shuffleCards() } } 
-                    className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center lg:text-left w-full lg:mt-6"
+                    className="cursor-pointer bg-blue-500 dark:bg-black hover:bg-blue-700 dark:border dark:border-1 dark:border-white text-white font-bold py-2 px-4 rounded text-center lg:text-left w-full lg:mt-6 dark:hover:bg-gray-800"
                 >
                     Shuffle Cards
             </div>
@@ -27,7 +27,7 @@ export function FlashCardControlBar() {
            }
          </div>
          <div className="pb-5 md:pb-0">
-           <label htmlFor={"playMatchingGame"}>Play Matching Game?</label>
+           <label htmlFor={"playMatchingGame"} className="dark:text-white">Play Matching Game?</label>
            <Select 
                 id={"playMatchingGame"}
                 aria-label={"Hide English?"}
@@ -36,11 +36,14 @@ export function FlashCardControlBar() {
                  onChange={ ( option ) => {
                     setPlayMatchingGame( option.value === "true" )
                 } }
+                classNames={{
+                  control: () => "bg-black text-white",
+                }}
            />
          </div>
 
          <div className="pb-5 md:pb-0">
-           <label htmlFor={"currentLangauge"}>Practice Language</label>
+           <label htmlFor={"currentLangauge"} className="dark:text-white">Practice Language</label>
            <Select 
                 id={"currentLanguage"}
                 aria-label={"Select Language"}
@@ -53,7 +56,7 @@ export function FlashCardControlBar() {
          </div>
 
          <div className="pb-5 md:pb-0">
-           <label htmlFor={"hideEnglish"}>Hide English?</label>
+           <label htmlFor={"hideEnglish"} className="dark:text-white">Hide English?</label>
            <Select 
                 id={"hideEnglish"}
                 aria-label={"Hide English?"}
@@ -65,7 +68,7 @@ export function FlashCardControlBar() {
            />
          </div>
          <div className="pb-5 md:pb-0">
-           <label>Cards Per Page</label>
+           <label className="dark:text-white" htmlFor={"Cards Per Page"}>Cards Per Page</label>
            <Select 
              aria-label={"Cards Per Page"} 
              value={cardsPerPageOptions.find( c => c.value === cardsPerPage )} 

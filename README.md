@@ -14,6 +14,10 @@ React, Typescript, TailwindCSS, vscode, Vercel
   </a>
 </p>
 
+## Lighthouse Scores
+
+As of Dec 16, 2023, Lighthouse is giving a score of 100 (Performance) / 100 (Accessibility), 100 (Best Practices), and 100 (SEO).
+
 ## Todo
 
 * Dark mode is incomplete (select boxes are not proper for dark mode)

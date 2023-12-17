@@ -9,7 +9,16 @@ export function FlashCardControlBar() {
     const yesNoOptions = [ {value: "true", label: "Yes" },  {value: "false", label: "No" } ];
 
     const { allFlashCards, shuffleCards } = useFlashCardContext();
-    const { currentLanguage, setCurrentLanguage, cardsPerPage, setCardsPerPage, hideEnglish, setHideEnglish, playMatchingGame, setPlayMatchingGame } = useConfigurationContext();
+    const { 
+      currentLanguage, 
+      setCurrentLanguage, 
+      cardsPerPage, 
+      setCardsPerPage, 
+      hideEnglish, 
+      setHideEnglish, 
+      playMatchingGame, 
+      setPlayMatchingGame 
+    } = useConfigurationContext();
     
     return (
         <div className="flex flex-col lg:flex-row md:justify-between pl-7 pr-7 w-full">

@@ -20,9 +20,9 @@ export function FlashCardStack() {
             setCurrentSide( side );
         } else {
             if ( ( flashCard.english === currentChoice ) && ( side !== currentSide ) ) {
-                const updatedFlashCards = selectedFlashCards.filter( card => card.english !== flashCard.english )
-                
-                setSelectedFlashCards( updatedFlashCards );
+                setSelectedFlashCards( 
+                    selectedFlashCards.filter( card => card.english !== flashCard.english ) 
+                );
             }
             setCurrenChoice( undefined );
         } 

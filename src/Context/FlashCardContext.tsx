@@ -19,7 +19,8 @@ export const FlashCardProvider = ({ children }) => {
     const { currentLanguage, cardsPerPage} = useConfigurationContext();
 
     const allFlashCards: FlashCard[] = useMemo( () => getAllFlashCards( currentLanguage ), [currentLanguage] );
-    const pickRandomFlashCards: FlashCard[] = useMemo( () => pickRandomItems( allFlashCards, cardsPerPage ), [allFlashCards, cardsPerPage] );
+    const pickRandomFlashCards: FlashCard[] 
+        = useMemo( () => pickRandomItems( allFlashCards, cardsPerPage ), [allFlashCards, cardsPerPage] );
     const [selectedFlashCards, setSelectedFlashCards] = useState( pickRandomFlashCards );
 
     const [leftMatchStack, setLeftMatchStack] = useState<FlashCard[]>( shuffleArray( selectedFlashCards ));
@@ -57,8 +58,13 @@ export const FlashCardProvider = ({ children }) => {
         rightMatchStack
     };
 
-    return <FlashCardContext.Provider value={contextValue}>
-        {children}</FlashCardContext.Provider>;
+    return ( 
+        <FlashCardContext.Provider 
+            value={contextValue}
+        >
+            {children}
+        </FlashCardContext.Provider>
+    );
 };
 
 export const useFlashCardContext = () => useContext(FlashCardContext);

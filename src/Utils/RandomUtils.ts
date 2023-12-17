@@ -6,8 +6,7 @@ export function pickRandomItems<T>(array: T[], count: number): T[] {
     throw new Error("Count must not exceed the length of the array");
   }
 
-  const shuffledArray = shuffleArray(array.slice());
-  return shuffledArray.slice(0, count);
+  return shuffleArray(array.slice()).slice(0, count);
 }
 
 export function shuffleArray<T>(array: T[]): T[] {

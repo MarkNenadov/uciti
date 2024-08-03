@@ -16,7 +16,7 @@ React, Typescript, TailwindCSS, vscode, Vercel
 
 ## Lighthouse Scores
 
-As of Dec 16, 2023, Lighthouse is giving a score of 100 (Performance) / 100 (Accessibility), 100 (Best Practices), and 100 (SEO).
+As of Aug 3, 2024, Lighthouse is giving a score of 90 (Performance) / 95 (Accessibility), 100 (Best Practices), and 100 (SEO).
 
 ## Todo
 

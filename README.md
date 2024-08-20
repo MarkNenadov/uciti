@@ -20,6 +20,7 @@ As of Aug 3, 2024, Lighthouse is giving a score of 90 (Performance) / 95 (Access
 
 ## Todo
 
+* Matching game is broken
 * Dark mode is incomplete (select boxes are not proper for dark mode)
 * Add many more words!
 * Add a way to star cards in order to keep them through shuffles

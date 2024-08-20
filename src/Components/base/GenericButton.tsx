@@ -9,11 +9,11 @@ export default function GenericButton( {text, shortText, onClick, dataTestId}: G
     return (
         <button
             type="button"
-            className="bg-gray-50 hover:bg-gray-200 py-2 px-4 rounded mt-4  border border-1 border-black border-opacity-10"
+            className="bg-gray-50 hover:bg-gray-200 dark:hover:bg-gray-800 dark:bg-black py-2 px-4 rounded mt-4  border border-1 border-black dark:border-white border-opacity-10"
             onClick={ onClick }
             data-testid={dataTestId || "generic-button"}
         >
-            <span className="hidden lg:block" data-testid="large-text-span">
+            <span className="hidden lg:block dark:text-white" data-testid="large-text-span">
                 { text }
             </span>
             <span className="block lg:hidden" data-testid="small-text-span">

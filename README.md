@@ -25,5 +25,4 @@ As of Aug 3, 2024, Lighthouse is giving a score of 90 (Performance) / 95 (Access
 * Add many more words!
 * Add a way to star cards in order to keep them through shuffles
 * Add a way to annotate whether a card has been seen
-* Extract configuration selects to a modal (perhaps launched by clickling gear button)--to simplify UI
 * Fix problem on matching game where clicking card shuffles card

@@ -10,7 +10,7 @@ interface NoteBannerProps {
 export function NoteBanner( props: NoteBannerProps ) {
     const { children, isFullWidth, text } = props;
 
-    let outerContainerClass = "text-center py-4 lg:px-4";
+    let outerContainerClass = "text-center py-4 opacity-80 lg:px-4";
     let innerContainerClass = "p-2 bg-gray-100 dark:bg-black dark:border dark:border-1 dark:border-white items-center leading-none lg:rounded-full flex lg:inline-flex";
 
     if ( !!isFullWidth ) {
@@ -21,7 +21,7 @@ export function NoteBanner( props: NoteBannerProps ) {
     return (
         <div className={outerContainerClass}>
         <div className={innerContainerClass} role="alert">
-          <span className="flex rounded-full uppercase px-2 py-1 text-xs font-bold mr-3 dark:text-white">Note:</span>
+          <span className="flex rounded-full uppercase px-2 py-1 text-md font-bold dark:text-white">ℹ️</span>
           <span className="font-semçibold mr-2 text-left flex-auto dark:text-white">{ !!text ? text : children }</span>
           
           <svg 

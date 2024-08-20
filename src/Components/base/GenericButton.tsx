@@ -16,7 +16,7 @@ export default function GenericButton( {text, shortText, onClick, dataTestId}: G
             <span className="hidden lg:block dark:text-white" data-testid="large-text-span">
                 { text }
             </span>
-            <span className="block lg:hidden" data-testid="small-text-span">
+            <span className="block lg:hidden dark:text-white" data-testid="small-text-span">
                 { !!shortText ? shortText : text }
             </span>
         </button>

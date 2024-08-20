@@ -10,7 +10,7 @@ interface GenericModalProps {
 export default function GenericModal( {title, children, dataTestId, closeHandler}: GenericModalProps) {
     return (
         <div 
-            className="fixed inset-0 flex items-center justify-center z-50"
+            className="fixed inset-0 flex items-center justify-center z-50 bg-gray-100 bg-opacity-50"
             aria-labelledby={`modal-title-${title}`}
             data-testid={ dataTestId || "generic-modal"}
             >

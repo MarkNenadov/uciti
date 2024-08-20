@@ -2,7 +2,6 @@ import { FlashCardStack } from './Components/FlashCardStack';
 import { FlashCardControlBar } from './Components/FlashCardControlBar';
 import React from 'react';
 import { Notes } from "./Components/Notes"
-import { NoteBanner } from "./Components/NoteBanner"
 import { FlashCardProvider } from './Context/FlashCardContext';
 import { ConfigurationProvider } from './Context/ConfigurationContext';
 
@@ -23,12 +22,6 @@ function App() {
           </FlashCardProvider>
           </ConfigurationProvider>
 
-      <NoteBanner isFullWidth={true}> 
-        <span>
-          This is an open source project by <a className="text-blue-500 dark:text-white underline" href="https://marknenadov.com">Mark Nenadov</a>, 
-          the React source is on <a className="text-blue-500 dark:text-white underline" href="https://github.com/MarkNenadov/uciti">GitHub</a>.
-          </span>
-      </NoteBanner>
     </div>
   );
 }

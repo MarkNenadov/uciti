@@ -63,7 +63,7 @@ const getAllSerbianFlashCards = () : FlashCard[] => {
         {translation: "prst", english: "finger"},
         {translation: "glas", english: "voice"},
         {translation: "ruku", english: "hand"},
-        {translation: "carpet", english: "tepih"},
+        {translation: "tepih", english: "carpet"},
         {translation: "kiša", english: "rain"},
         {translation: "oblak", english: "cloud"},
         {translation: "poljubac", english: "kiss"},

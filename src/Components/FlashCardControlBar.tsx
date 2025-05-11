@@ -57,6 +57,7 @@ export function FlashCardControlBar() {
                       <div className="pb-2 md:pb-5">
                         <label htmlFor={"playMatchingGame"} className="dark:text-white text-sm">Play Matching Game?</label>
                         <Select 
+                              unstyled
                               id={"playMatchingGame"}
                               aria-label={"Hide English?"}
                               value={ yesNoOptions.find( e => e.value === "" + playMatchingGame ) } 
@@ -65,7 +66,21 @@ export function FlashCardControlBar() {
                                   setPlayMatchingGame( option.value === "true" )
                               } }
                               classNames={{
-                                control: () => "bg-black text-white",
+                                control: () =>
+                                  "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
+                                menu: () =>
+                                  "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
+                                menuList: () => "bg-white dark:bg-black",
+                                singleValue: () => "text-black dark:text-white",
+                                option: (state) => {
+                                  if (state.isSelected) {
+                                    return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
+                                  }
+                                  if (state.isFocused) {
+                                    return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
+                                  }
+                                  return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
+                                },
                               }}
                         />
                       </div>
@@ -73,6 +88,7 @@ export function FlashCardControlBar() {
                       <div className="pb-2 md:pb-5">
                         <label htmlFor={"currentLangauge"} className="dark:text-white text-sm">Practice Language</label>
                         <Select 
+                              unstyled
                               id={"currentLanguage"}
                               aria-label={"Select Language"}
                               value={languageOptions.find( l => l.value === currentLanguage )} 
@@ -80,12 +96,30 @@ export function FlashCardControlBar() {
                               onChange={ ( option ) => {
                                   setCurrentLanguage( option.value )
                               } }
+                              classNames={{
+                                control: () =>
+                                  "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
+                                menu: () =>
+                                  "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
+                                menuList: () => "bg-white dark:bg-black",
+                                singleValue: () => "text-black dark:text-white",
+                                option: (state) => {
+                                  if (state.isSelected) {
+                                    return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
+                                  }
+                                  if (state.isFocused) {
+                                    return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
+                                  }
+                                  return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
+                                },
+                              }}
                         />
                       </div>
 
                       <div className="pb-2 md:pb-5">
                         <label htmlFor={"hideEnglish"} className="dark:text-white text-sm">Hide English?</label>
                         <Select 
+                              unstyled
                               id={"hideEnglish"}
                               aria-label={"Hide English?"}
                               value={ yesNoOptions.find( e => e.value === "" + hideEnglish ) } 
@@ -93,17 +127,52 @@ export function FlashCardControlBar() {
                               onChange={ ( option ) => {
                                   setHideEnglish( option.value === "true" )
                               } }
+                              classNames={{
+                                control: () =>
+                                  "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
+                                menu: () =>
+                                  "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
+                                menuList: () => "bg-white dark:bg-black",
+                                singleValue: () => "text-black dark:text-white",
+                                option: (state) => {
+                                  if (state.isSelected) {
+                                    return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
+                                  }
+                                  if (state.isFocused) {
+                                    return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
+                                  }
+                                  return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
+                                },
+                              }}
                         />
                       </div>
                       <div className="pb-2 md:pb-5">
                         <label className="dark:text-white text-sm" htmlFor={"Cards Per Page"}>Cards Per Page</label>
                         <Select 
+                          unstyled
                           aria-label={"Cards Per Page"} 
                           value={cardsPerPageOptions.find( c => c.value === cardsPerPage )} 
                           options={ cardsPerPageOptions } 
                           onChange={ ( option ) => {
                             setCardsPerPage( option.value )
                           } }
+                          classNames={{
+                            control: () =>
+                              "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
+                            menu: () =>
+                              "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
+                            menuList: () => "bg-white dark:bg-black",
+                            singleValue: () => "text-black dark:text-white",
+                            option: (state) => {
+                              if (state.isSelected) {
+                                return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
+                              }
+                              if (state.isFocused) {
+                                return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
+                              }
+                              return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
+                            },
+                          }}
                         />
                       </div>
                     </GenericModal>

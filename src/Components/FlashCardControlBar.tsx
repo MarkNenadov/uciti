@@ -6,6 +6,29 @@ import GenericModal from './base/GenericModal';
 import GenericButton from './base/GenericButton';
 import { NoteBanner } from "./NoteBanner"
 
+// ThemedSelect wrapper for consistent styling
+const selectClassNames = {
+  control: () =>
+    "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
+  menu: () =>
+    "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
+  menuList: () => "bg-white dark:bg-black",
+  singleValue: () => "text-black dark:text-white",
+  option: (state) => {
+    if (state.isSelected) {
+      return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
+    }
+    if (state.isFocused) {
+      return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
+    }
+    return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
+  },
+};
+
+function ThemedSelect(props) {
+  return <Select unstyled classNames={selectClassNames} {...props} />;
+}
+
 export function FlashCardControlBar() {
     const cardsPerPageOptions = [ {value: 4, label: "4" },  {value: 8, label: "8" },  {value: 10, label: "10" },  {value: 12, label: "12" }  ];
     const languageOptions = [ {value: "SR", label: "Srpski" },  {value: "DE", label: "Deutsch" } ];
@@ -56,8 +79,7 @@ export function FlashCardControlBar() {
                     >
                       <div className="pb-2 md:pb-5">
                         <label htmlFor={"playMatchingGame"} className="dark:text-white text-sm">Play Matching Game?</label>
-                        <Select 
-                              unstyled
+                        <ThemedSelect 
                               id={"playMatchingGame"}
                               aria-label={"Hide English?"}
                               value={ yesNoOptions.find( e => e.value === "" + playMatchingGame ) } 
@@ -65,30 +87,12 @@ export function FlashCardControlBar() {
                               onChange={ ( option ) => {
                                   setPlayMatchingGame( option.value === "true" )
                               } }
-                              classNames={{
-                                control: () =>
-                                  "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
-                                menu: () =>
-                                  "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
-                                menuList: () => "bg-white dark:bg-black",
-                                singleValue: () => "text-black dark:text-white",
-                                option: (state) => {
-                                  if (state.isSelected) {
-                                    return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
-                                  }
-                                  if (state.isFocused) {
-                                    return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
-                                  }
-                                  return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
-                                },
-                              }}
                         />
                       </div>
 
                       <div className="pb-2 md:pb-5">
                         <label htmlFor={"currentLangauge"} className="dark:text-white text-sm">Practice Language</label>
-                        <Select 
-                              unstyled
+                        <ThemedSelect 
                               id={"currentLanguage"}
                               aria-label={"Select Language"}
                               value={languageOptions.find( l => l.value === currentLanguage )} 
@@ -96,30 +100,12 @@ export function FlashCardControlBar() {
                               onChange={ ( option ) => {
                                   setCurrentLanguage( option.value )
                               } }
-                              classNames={{
-                                control: () =>
-                                  "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
-                                menu: () =>
-                                  "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
-                                menuList: () => "bg-white dark:bg-black",
-                                singleValue: () => "text-black dark:text-white",
-                                option: (state) => {
-                                  if (state.isSelected) {
-                                    return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
-                                  }
-                                  if (state.isFocused) {
-                                    return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
-                                  }
-                                  return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
-                                },
-                              }}
                         />
                       </div>
 
                       <div className="pb-2 md:pb-5">
                         <label htmlFor={"hideEnglish"} className="dark:text-white text-sm">Hide English?</label>
-                        <Select 
-                              unstyled
+                        <ThemedSelect 
                               id={"hideEnglish"}
                               aria-label={"Hide English?"}
                               value={ yesNoOptions.find( e => e.value === "" + hideEnglish ) } 
@@ -127,52 +113,17 @@ export function FlashCardControlBar() {
                               onChange={ ( option ) => {
                                   setHideEnglish( option.value === "true" )
                               } }
-                              classNames={{
-                                control: () =>
-                                  "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
-                                menu: () =>
-                                  "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
-                                menuList: () => "bg-white dark:bg-black",
-                                singleValue: () => "text-black dark:text-white",
-                                option: (state) => {
-                                  if (state.isSelected) {
-                                    return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
-                                  }
-                                  if (state.isFocused) {
-                                    return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
-                                  }
-                                  return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
-                                },
-                              }}
                         />
                       </div>
                       <div className="pb-2 md:pb-5">
                         <label className="dark:text-white text-sm" htmlFor={"Cards Per Page"}>Cards Per Page</label>
-                        <Select 
-                          unstyled
+                        <ThemedSelect 
                           aria-label={"Cards Per Page"} 
                           value={cardsPerPageOptions.find( c => c.value === cardsPerPage )} 
                           options={ cardsPerPageOptions } 
                           onChange={ ( option ) => {
                             setCardsPerPage( option.value )
                           } }
-                          classNames={{
-                            control: () =>
-                              "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
-                            menu: () =>
-                              "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
-                            menuList: () => "bg-white dark:bg-black",
-                            singleValue: () => "text-black dark:text-white",
-                            option: (state) => {
-                              if (state.isSelected) {
-                                return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
-                              }
-                              if (state.isFocused) {
-                                return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
-                              }
-                              return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
-                            },
-                          }}
                         />
                       </div>
                     </GenericModal>

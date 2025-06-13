@@ -73,6 +73,21 @@ const getAllSerbianFlashCards = () : FlashCard[] => {
 
 const getAllGermanFlashCards = () : FlashCard[] => {
     return [ 
+      {translation: "fitnessstudio", english: "gym"},
+      {translation: "ausflug", english: "excursion"},
+      {translation: "allein", english: "alone"},
+      {translation: "bild", english: "painting"},
+      {translation: "fernseher", english: "TV"},
+      {translation: "zimmer", english: "room"},
+      {translation: "fenster", english: "window"},
+      {translation: "kofkissen", english: "pillow"},
+      {translation: "arbeiten", english: "work"},
+      {translation: "beliebt", english: "popular"},
+      {translation: "viertel", english: "quarter"},
+      {translation: "zurzeit", english: "currently"},
+      {translation: "pommes", english: "fries"},
+      {translation: "garten", english: "garden"},
+      {translation: "handy", english: "cell phone"},
       {translation: "sehr", english: "very"},
       {translation: "unsere", english: "our"},
       {translation: "nachbar", english: "neighbour"},

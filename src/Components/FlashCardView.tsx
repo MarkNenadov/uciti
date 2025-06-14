@@ -12,10 +12,15 @@ interface FlashCardProps {
 
 export function FlashCardView( {flashCard, hideEnglish, preventFlip}: FlashCardProps ) {
     const [showEnglish, setShowEnglish] = useState( !hideEnglish );
+    const [isClient, setIsClient] = useState(false);
 
     useEffect( () => {
         setShowEnglish( !hideEnglish )
     }, [hideEnglish] );
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
     return (
         <div  
@@ -23,8 +28,8 @@ export function FlashCardView( {flashCard, hideEnglish, preventFlip}: FlashCardP
           onClick={() => { if ( !preventFlip ) { setShowEnglish(!showEnglish); }}}
         >
           <div className="overflow-wrap break-word ">
-            {showEnglish && flashCard.english}
-            {!showEnglish && flashCard.translation}
+            {isClient && showEnglish && flashCard.english}
+            {isClient && !showEnglish && flashCard.translation}
           </div>
         </div>
       )

@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UCITI
 
-## Getting Started
+A language-learning flashcard web application built with Next.js.
 
-First, run the development server:
+## 🌍 Language Support
 
+Currently supports two languages:
+- **Serbian (Srpski)** - 50+ essential words and phrases
+- **German (Deutsch)** - 70+ common words and phrases
+
+## 🎯 Features
+
+- **Interactive Flashcards**: Click cards to toggle between target language and English
+- **Matching Game**: Test your knowledge by matching words in both languages
+- **Customizable Learning**:
+  - Adjust number of cards per page (4, 8, 10, or 12)
+  - Option to hide English translations for more challenging practice
+  - Shuffle cards for varied learning experience
+- **Dark Mode Support**: Comfortable viewing in any lighting condition
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org)
+- **Language:** [TypeScript](https://www.typescriptlang.org)
+- **UI Library:** [React](https://reactjs.org)
+- **Styling:** [TailwindCSS](https://tailwindcss.com)
+- **Form Components:** [React Select](https://react-select.com)
+- **Code Quality:** ESLint
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+- Node.js (Latest LTS version recommended)
+- Bun (recommended) or npm/yarn/pnpm
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/uciti.git
+cd uciti
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+bun install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
+```bash
+bun run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## Learn More
+## 📝 Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `bun run dev` - Start the development server
+- `bun run build` - Build the application for production
+- `bun run start` - Start the production server
+- `nbun run lint` - Run ESLint for code quality checks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗️ Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The project follows the Next.js App Router structure:
 
-## Deploy on Vercel
+- `app/` - Main application code
+- `public/` - Static assets
+- `components/` - Reusable React components
+- `styles/` - Global styles and Tailwind configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ using Next.js

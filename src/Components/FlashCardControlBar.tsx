@@ -1,7 +1,9 @@
+"use client";
+
 import React, {useState} from 'react';
 import Select from 'react-select';
-import { useFlashCardContext } from '../Context/FlashCardContext';
-import { useConfigurationContext } from '../Context/ConfigurationContext';
+import { useFlashCardContext } from '../context/FlashCardContext';
+import { useConfigurationContext } from '../context/ConfigurationContext';
 import GenericModal from './base/GenericModal';
 import GenericButton from './base/GenericButton';
 import { NoteBanner } from "./NoteBanner"

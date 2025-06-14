@@ -1,7 +1,9 @@
+"use client";
+
 import React, { createContext, useState, useMemo, useEffect, useContext, useCallback } from 'react';
-import { pickRandomItems, shuffleArray } from './../Utils/RandomUtils';
-import { getAllFlashCards } from "../Data/FlashCardData";
-import { FlashCard, hasDuplicates } from './../Model/FlashCard'
+import { pickRandomItems, shuffleArray } from './../utils/RandomUtils';
+import { getAllFlashCards } from "../data/FlashCardData";
+import { FlashCard, hasDuplicates } from './../model/FlashCard'
 import { useConfigurationContext } from './ConfigurationContext';
 
 interface FlashCardContextType {

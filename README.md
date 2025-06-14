@@ -1,28 +1,36 @@
-# uciti
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A React Serbian-English and German-English flash card app.
+## Getting Started
 
-http://uciti.marknenadov.com or http://serbian.marknenadov.com/
+First, run the development server:
 
-## Tech
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-React, Typescript, TailwindCSS, vscode, Vercel
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,typescript,tailwindcss,vscode,vercel" />
-  </a>
-</p>
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Lighthouse Scores
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-As of Aug 3, 2024, Lighthouse is giving a score of 90 (Performance) / 95 (Accessibility), 100 (Best Practices), and 100 (SEO).
+## Learn More
 
-## Todo
+To learn more about Next.js, take a look at the following resources:
 
-* Matching game is broken
-* Dark mode is incomplete (select boxes are not proper for dark mode)
-* Add many more words!
-* Add a way to star cards in order to keep them through shuffles
-* Add a way to annotate whether a card has been seen
-* Fix problem on matching game where clicking card shuffles card
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

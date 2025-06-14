@@ -1,6 +1,8 @@
+"use client";
+
 /* eslint-disable no-template-curly-in-string */
 import React from 'react';
-import { FlashCard } from '../Model/FlashCard'
+import { FlashCard } from '../model/FlashCard'
 
 interface MatchCardProps {
     flashCard: FlashCard

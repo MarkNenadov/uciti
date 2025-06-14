@@ -1,53 +1,29 @@
 {
-  "name": "uciti2",
+  "name": "uciti",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-scripts": "5.0.1",
-    "react-select": "^5.10.1",
-    "typescript": "^5.5.4",
-    "web-vitals": "^4.2.3"
-  },
   "scripts": {
-    "start": "npm run watch:css &  react-scripts start",
-    "build": "npm run build:css && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "watch:css": "postcss src/tailwind.css -o src/index.css --watch --verbose",
-    "build:css": "postcss src/tailwind.css -o src/index.css"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "next": "15.3.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-select": "^5.10.1"
   },
   "devDependencies": {
-    "@testing-library/react": "15.0.7",
-    "@testing-library/jest-dom": "6.4.5",
-    "@babel/preset-typescript": "^7.24.1",
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.9.3",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@types/websocket": "^1.0.10",
-    "autoprefixer": "^10.4.20",
-    "jest": "^30.0.0",
-    "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.4.15"
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5"
   }
 }

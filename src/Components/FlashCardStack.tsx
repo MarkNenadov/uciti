@@ -1,11 +1,13 @@
+"use client";
+
 import React, { useState } from 'react';
 import { FlashCardView } from './FlashCardView';
 import { MatchCardView } from './MatchCardView';
-import { FlashCard, hasDuplicates } from '../Model/FlashCard'
+import { FlashCard, hasDuplicates } from '../model/FlashCard'
 import { NoteBanner } from './NoteBanner';
-import { useFlashCardContext } from '../Context/FlashCardContext';
-import { useConfigurationContext } from '../Context/ConfigurationContext';
-import { shuffleArray } from './../Utils/RandomUtils';
+import { useFlashCardContext } from '../context/FlashCardContext';
+import { useConfigurationContext } from '../context/ConfigurationContext';
+import { shuffleArray } from './../utils/RandomUtils';
 
 export function FlashCardStack() {
     const { selectedFlashCards, setSelectedFlashCards  } = useFlashCardContext();

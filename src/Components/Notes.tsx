@@ -1,7 +1,9 @@
+"use client";
+
 //@ts-ignore
 import React from 'react';
 import { NoteBanner } from "./NoteBanner"
-import { useConfigurationContext } from '../Context/ConfigurationContext';
+import { useConfigurationContext } from '../context/ConfigurationContext';
 
 interface NotesProps {
 }

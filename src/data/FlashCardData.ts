@@ -1,4 +1,4 @@
-import { FlashCard } from '../Model/FlashCard'
+import { FlashCard } from '../model/FlashCard'
 
 export const getAllFlashCards = ( language: string ) : FlashCard[] => {
   if ( language === "SR" ) {

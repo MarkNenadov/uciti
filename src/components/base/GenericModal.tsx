@@ -2,7 +2,7 @@ import GenericButton from "./GenericButton";
 
 interface GenericModalProps {
     title: string,
-    children: any,
+    children: React.ReactNode,
     closeHandler: () => void,
     dataTestId?: string
 }

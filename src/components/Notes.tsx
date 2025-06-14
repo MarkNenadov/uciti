@@ -1,14 +1,10 @@
 "use client";
 
-//@ts-ignore
 import React from 'react';
 import { NoteBanner } from "./NoteBanner"
 import { useConfigurationContext } from '../context/ConfigurationContext';
 
-interface NotesProps {
-}
-
-export function Notes( props: NotesProps ) {
+export function Notes() {
     const { playMatchingGame } = useConfigurationContext();
 
 

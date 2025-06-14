@@ -1,6 +1,5 @@
 "use client";
 
-/* eslint-disable no-template-curly-in-string */
 import React from 'react';
 import { FlashCard } from '../model/FlashCard'
 

@@ -1,9 +1,9 @@
-import { FlashCardStack } from '../components/FlashCardStack';
-import { FlashCardControlBar } from '../components/FlashCardControlBar';
+import { FlashCardStack } from '@/components/FlashCardStack';
+import { FlashCardControlBar } from '@/components/FlashCardControlBar';
 import React from 'react';
-import { Notes } from "../components/Notes"
-import { FlashCardProvider } from '../context/FlashCardContext';
-import { ConfigurationProvider } from '../context/ConfigurationContext';
+import { Notes } from "@/components/Notes"
+import { FlashCardProvider } from '@/context/FlashCardContext';
+import { ConfigurationProvider } from '@/context/ConfigurationContext';
 
 export default function Home() {
   return (

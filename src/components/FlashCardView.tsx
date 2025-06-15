@@ -23,10 +23,10 @@ export function FlashCardView( {flashCard, hideEnglish, preventFlip}: FlashCardP
 
     return (
         <div  
-          className={`text-2xl lg:text-4xl flex justify-between items-center h-48 ${preventFlip ? '' : 'cursor-pointer'} border-1 rounded-lg m-6 p-6 bg-emerald-100 dark:bg-black dark:border dark:border-1 dark:border-white hover:bg-emerald-200 dark:hover:bg-gray-800 dark:text-white w-full lg:w-1/4 overflow-hidden`} 
+          className={`min-h-[2.75rem] text-2xl lg:text-4xl flex justify-between items-center ${preventFlip ? '' : 'cursor-pointer'} border-1 rounded-lg m-6 px-4 py-1 lg:px-6 lg:py-1 bg-emerald-100 dark:bg-black dark:border dark:border-1 dark:border-white hover:bg-emerald-200 dark:hover:bg-gray-800 dark:text-white w-full lg:w-1/4 overflow-hidden`} 
           onClick={() => { if ( !preventFlip ) { setShowEnglish(!showEnglish); }}}
         >
-          <div className="overflow-wrap break-word text-center flex-grow p-2">
+          <div className="overflow-wrap break-word text-center flex-grow py-1">
             {isClient && showEnglish && flashCard.english}
             {isClient && !showEnglish && flashCard.translation}
           </div>

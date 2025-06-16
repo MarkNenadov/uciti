@@ -17,7 +17,11 @@ interface FlashCardContextType {
 
 const FlashCardContext = createContext<FlashCardContextType | undefined>(undefined);
 
-export const FlashCardProvider = ({ children }) => {
+interface FlashCardProviderProps {
+    children: React.ReactNode;
+}
+
+export const FlashCardProvider: React.FC<FlashCardProviderProps> = ({ children }) => {
     const { currentLanguage, cardsPerPage} = useConfigurationContext();
 
     const allFlashCards: FlashCard[] = useMemo( () => getAllFlashCards( currentLanguage ), [currentLanguage] );

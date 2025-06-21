@@ -5,8 +5,8 @@ A language-learning flashcard web application built with Next.js.
 ## 🌍 Language Support
 
 Currently supports two languages:
-- **Serbian (Srpski)** - 50+ essential words and phrases
-- **German (Deutsch)** - 70+ common words and phrases
+- **Serbian (Srpski)**
+- **German (Deutsch)**
 
 ## 🎯 Features
 

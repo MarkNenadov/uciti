@@ -72,6 +72,8 @@ export function FlashCardControlBar() {
         <div className="pb-5 lg:pb-0">
           <GenericButton 
                   text="⚙️"
+                  ariaLabel="Configuration"
+                  launchesModal
                   onClick={ () => setIsConfigurationOpen( !isConfigurationOpen ) } 
                 />
                   { isConfigurationOpen && (

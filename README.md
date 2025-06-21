@@ -1,5 +1,7 @@
 # UCITI
 
+"učiti - (transitive) to teach, instruct, educate"
+
 A language-learning flashcard web application built with Next.js.
 
 ## 🌍 Language Support

@@ -11,19 +11,19 @@ import { NoteBanner } from "./NoteBanner"
 // ThemedSelect wrapper for consistent styling
 const selectClassNames = {
   control: () =>
-    "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-2 py-1 focus:ring-2 focus:ring-blue-500",
+    "bg-white text-black dark:bg-black dark:text-white border border-gray-300 dark:border-white rounded px-4 py-2 focus:ring-2 focus:ring-blue-500",
   menu: () =>
     "bg-white dark:bg-black border border-gray-300 dark:border-white rounded mt-1",
   menuList: () => "bg-white dark:bg-black",
   singleValue: () => "text-black dark:text-white",
   option: (state) => {
     if (state.isSelected) {
-      return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-2 py-1";
+      return "bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-4 py-2";
     }
     if (state.isFocused) {
-      return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-2 py-1";
+      return "bg-gray-100 text-black dark:bg-gray-800 dark:text-white px-4 py-2";
     }
-    return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-2 py-1";
+    return "bg-white text-black dark:bg-black dark:text-white cursor-pointer px-4 py-2";
   },
 };
 

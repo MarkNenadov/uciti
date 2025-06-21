@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
-    "next": "15.3.3",
+    "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-select": "^5.10.1"
@@ -18,11 +18,11 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.10",
-    "@types/node": "^20",
+    "@types/node": "^24.0.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.3",
+    "eslint-config-next": "15.3.4",
     "tailwindcss": "^4.1.10",
     "typescript": "^5"
   }

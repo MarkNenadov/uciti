@@ -67,7 +67,32 @@ const getAllSerbianFlashCards = () : FlashCard[] => {
         {translation: "kiša", english: "rain"},
         {translation: "oblak", english: "cloud"},
         {translation: "poljubac", english: "kiss"},
-        {translation: "kosa", english: "hair"}
+        {translation: "kosa", english: "hair"},
+        {translation: "aerodrom", english: "airport"},
+        {translation: "avion", english: "airplane"},
+        {translation: "karta", english: "ticket"},
+        {translation: "pasoš", english: "passport"},
+        {translation: "kofer", english: "suitcase"},
+        {translation: "voz", english: "train"},
+        {translation: "autobus", english: "bus"},
+        {translation: "stanica", english: "station"},
+        {translation: "hotel", english: "hotel"},
+        {translation: "rezervacija", english: "reservation"},
+        {translation: "mapa", english: "map"},
+        {translation: "taksi", english: "taxi"},
+        {translation: "putovanje", english: "journey"},
+        {translation: "putovati", english: "travel"},
+        {translation: "turista", english: "tourist"},
+        {translation: "vodič", english: "guide"},
+        {translation: "prtljag", english: "luggage"},
+        {translation: "granica", english: "border"},
+        {translation: "carina", english: "customs"},
+        {translation: "odmor", english: "vacation"},
+        {translation: "izlet", english: "trip"},
+        {translation: "grad", english: "city"},
+        {translation: "zemlja", english: "country"},
+        {translation: "put", english: "road"},
+        {translation: "ranac", english: "backpack"}
       ];
 }
 

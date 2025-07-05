@@ -25,12 +25,9 @@ export const FlashCardProvider: React.FC<FlashCardProviderProps> = ({ children }
     const { currentLanguage, cardsPerPage} = useConfigurationContext();
 
     const allFlashCards: FlashCard[] = useMemo( () => getAllFlashCards( currentLanguage ), [currentLanguage] );
-    const pickRandomFlashCards: FlashCard[] 
-        = useMemo( () => pickRandomItems( allFlashCards, cardsPerPage ), [allFlashCards, cardsPerPage] );
-    const [selectedFlashCards, setSelectedFlashCards] = useState( pickRandomFlashCards );
-
-    const [leftMatchStack, setLeftMatchStack] = useState<FlashCard[]>( shuffleArray( selectedFlashCards ));
-    const [rightMatchStack, setRightMatchStack] = useState<FlashCard[]>( shuffleArray( selectedFlashCards ));
+    const [selectedFlashCards, setSelectedFlashCards] = useState<FlashCard[]>( [] );
+    const [leftMatchStack, setLeftMatchStack] = useState<FlashCard[]>( [] );
+    const [rightMatchStack, setRightMatchStack] = useState<FlashCard[]>( [] );
 
     const shuffleCards = useCallback(() => { 
         setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
@@ -40,19 +37,16 @@ export const FlashCardProvider: React.FC<FlashCardProviderProps> = ({ children }
         if ( hasDuplicates( allFlashCards ) ) {
           alert( "Warning duplicate flashcard detected" );
         }
-        setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
+        if ( allFlashCards.length > 0 ) {
+          setSelectedFlashCards( pickRandomItems( allFlashCards, cardsPerPage ) );
+        }
       }, [cardsPerPage, allFlashCards]);
 
-      
     useEffect( () => {
-        if ( selectedFlashCards.length === 0 ) {
-            shuffleCards();
+        if ( selectedFlashCards.length > 0 ) {
+          setLeftMatchStack( shuffleArray( selectedFlashCards ) );
+          setRightMatchStack( shuffleArray( selectedFlashCards ) );
         }
-    }, [ selectedFlashCards, shuffleCards ] );
-
-    useEffect( () => {
-        setLeftMatchStack( shuffleArray( selectedFlashCards ) );
-        setRightMatchStack( shuffleArray( selectedFlashCards ) );
     }, [ selectedFlashCards ] );
 
     const contextValue = {

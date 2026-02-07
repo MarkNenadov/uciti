@@ -2,13 +2,19 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Package Manager
+
+- Use `bun` for all package management and script execution
+- The only exception is `npm outdated`, which may be used to check for outdated packages
+- Never use `npm install`, `npm update`, `npm run`, or other npm commands
+
 ## Development Commands
 
-- `npm run dev` - Start Next.js development server
-- `npm run build` - Build the application for production
-- `npm run start` - Start the production server
-- `npm run lint` - Run ESLint for code quality checks
-- `npm run test` - Run Jest tests with coverage
+- `bun run dev` - Start Next.js development server
+- `bun run build` - Build the application for production
+- `bun run start` - Start the production server
+- `bun run lint` - Run ESLint for code quality checks
+- `bun run test` - Run Jest tests with coverage
 
 ## Architecture Overview
 
